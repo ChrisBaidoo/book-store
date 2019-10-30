@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ubiqum Bookstore</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="header">
+            <div class="row background-image">
+                <div class="col-md-3 col-sm-6 mb-30px">
+                    <img src="./book-icon.png" class="logo" alt="book-icon">
+                </div>
+                <div class="col-md-9 col-sm-6 align-self-center back-image">
+                    <h1>Ubiqum Bookstore</h1>
+                    <input class="search" type="text" v-model="search" placeholder="Search the bookstore">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row"> -->
+        <!-- <div class="col-lg-9"> -->
+        <!-- <img class="logo" src="https://data.whicdn.com/images/333569027/original.jpg?t=1564714707"> -->
+        <!-- <h1>Ubiqum Bookstore</h1> -->
+        <!-- </div> -->
+        <!-- <div class="col-lg-3"></div> -->
+        <!-- <label class="col-lg-3"> -->
+        <!-- <input type="text" v-model="searchBooks" placeholder="Search the bookstore"> -->
+        <!-- </label> -->
+
+        <!-- </div> -->
+
+        <div class="container">
+
+            <!-- Loop though the book object -->
+            <div class="flip-book book" v-for="book in filteredBooks">
+                <!-- Create the front of the card and attatch the book cover -->
+                <div class="flip-book-inner">
+                    <div class="flip-book-front">
+                        <img class="book-cover" v-bind:src="book.cover">
+                    </div>
+                    <!-- Create the back of the card and attatch the book title and the description -->
+                    <div class="flip-book-back book-info ">
+                        <h5 class="book-title">{{book.title}}</h5>
+                        <p class="book-description">{{book.description}}</p>
+
+                        <!-- Create a button, style with bootstrap and add funcionalities to it by using "data-fancy" framework -->
+                        <div>
+                            <button type="button" class="btn btn-outline-info" v-bind:href="book.detail"
+                                data-fancybox="imagespreview" data-thumbs='{"autoStart":true}' :data-thumb="book.detail"
+                                :data-caption="book.description">More Info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-result" v-show="noBookFound">
+                <p>There is no result that match your query</p>
+            </div>
+
+
+        </div>
+
+        <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-3"> &copy; 2019 Copyright: All Rights Reserved
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/" target="=_blank" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/" target="=_blank" class="fa fa-twitter"></a>
+                <a href="https://www.linkedin.com/" target="=_blank" class="fa fa-linkedin"></a>
+            </div>
+        </footer>
+
+
+    </div>
+
+
+    <link rel="stylesheet" href="./main.css">
+
+    <script src="./vue.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!-- 1. Add latest jQuery and fancybox files -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+</body>
+
+</html>

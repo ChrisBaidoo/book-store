@@ -1,0 +1,117 @@
+.container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 14px;
+    background-color: rgb(199, 231, 220);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: 0px 2px 2px 0px rgba(158, 150, 158, 1);
+    /* background: radial-gradient(circle,
+      rgba(133, 195, 237, 1) 0%,
+      rgba(231, 255, 254, 1) 100%); */
+    justify-content: space-around;
+}
+
+.logo {
+    width: 80%;
+}
+
+
+.book {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    margin-top: 1rem;
+}
+
+.search {
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.header {
+    margin: 50px;
+    margin-top: 30px;
+    position: sticky;
+}
+
+h1 {
+    color: rgb(0, 0, 87);
+}
+
+/* Book */
+.book-cover {
+    width: 210px;
+    height: 310px;
+    perspective: 1000px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px 0px rgba(158, 150, 158, 1);
+}
+
+.book-info {
+    width: 210px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.book-title {
+    color: aliceblue;
+}
+
+.book-description {
+    color: aquamarine;
+}
+
+.flip-book {
+    background-color: transparent;
+    width: 210px;
+    height: 310px;
+    perspective: 1000px;
+}
+
+.flip-book-inner {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-book:hover .flip-book-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-book-front,
+.flip-book-back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.flip-book-back {
+    transform: rotateY(180deg);
+}
+
+/* Footer */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    font-size: 20px;
+}
+
+.social {
+    text-align: center;
+    margin-top: 0;
+    text-decoration: none;
+}
