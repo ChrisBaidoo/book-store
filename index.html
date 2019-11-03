@@ -14,11 +14,11 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="header">
+    <div id="app" v-cloak>
+        <div class="header fixed-top">
             <div class="row background-image">
                 <div class="col-md-3 col-sm-6 mb-30px">
-                    <img src="./book-icon.png" class="logo" alt="book-icon">
+                    <img src="./book-icon.png" class="logo " alt="book-icon">
                 </div>
                 <div class="col-md-9 col-sm-6 align-self-center back-image">
                     <h1>Ubiqum Bookstore</h1>
@@ -27,19 +27,8 @@
             </div>
         </div>
 
-        <!-- <div class="row"> -->
-        <!-- <div class="col-lg-9"> -->
-        <!-- <img class="logo" src="https://data.whicdn.com/images/333569027/original.jpg?t=1564714707"> -->
-        <!-- <h1>Ubiqum Bookstore</h1> -->
-        <!-- </div> -->
-        <!-- <div class="col-lg-3"></div> -->
-        <!-- <label class="col-lg-3"> -->
-        <!-- <input type="text" v-model="searchBooks" placeholder="Search the bookstore"> -->
-        <!-- </label> -->
 
-        <!-- </div> -->
-
-        <div class="container">
+        <div class="container m-t 5">
 
             <!-- Loop though the book object -->
             <div class="flip-book book" v-for="book in filteredBooks">
@@ -62,32 +51,40 @@
                     </div>
                 </div>
             </div>
-
-            <div class="empty-result" v-show="noBookFound">
-                <p>There is no result that match your query</p>
-            </div>
-
-
         </div>
 
-        <footer class="page-footer font-small blue">
-            <div class="footer-copyright text-center py-3"> &copy; 2019 Copyright: All Rights Reserved
-            </div>
-            <div class="social">
-                <a href="https://www.facebook.com/" target="=_blank" class="fa fa-facebook"></a>
-                <a href="https://twitter.com/" target="=_blank" class="fa fa-twitter"></a>
-                <a href="https://www.linkedin.com/" target="=_blank" class="fa fa-linkedin"></a>
-            </div>
-        </footer>
+
+        <div v-show="filteredBooks.length === 0" class="info" v-cloak>
+            <h5>{{filter}}</h5>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3"> &copy; 2019 Copyright: All Rights Reserved
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/" target="=_blank" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/" target="=_blank" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/" target="=_blank" class="fa fa-linkedin"></a>
+        </div>
+    </footer>
 
 
     </div>
 
 
     <link rel="stylesheet" href="./main.css">
-
     <script src="./vue.js"></script>
+
     <!-- jQuery library -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
@@ -103,5 +100,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 </body>
+
 
 </html>

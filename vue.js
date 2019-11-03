@@ -2,7 +2,8 @@ const vueApp = new Vue({
     el: "#app",
     data: {
         books: [],
-        search: ""
+        search: "",
+        filter: "Sorry, there are no books that matched your query",
     },
     methods: {
         getData: function () {
@@ -12,25 +13,25 @@ const vueApp = new Vue({
                 })
                 .then((data) => {
                     this.books = data.books;
-                    console.log(this.books);
                 });
-        }
+        },
+        // newfiltered: function () {
+        //     return this.newfilteredBooks = this.filteredBooks
+        // }
+
     },
-    //Call the getData function to make the call
+    //Use the Created function to call the getData function
     created() {
         this.getData();
     },
 
-    //function to filter the array based user input in the search box
+    // function to filter the array based on user input in the search box
     computed: {
         filteredBooks: function () {
             return this.books.filter((book) => book.title.toLowerCase().match(this.search.toLowerCase()));
-        }
+        },
     },
 
-    computed: {
-        filteredBooks: function () {
-            return this.books.filter((book) => book.title.toLowerCase().match(this.search.toLowerCase()));
-        }
-    },
+
+
 })
