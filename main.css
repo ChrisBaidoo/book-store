@@ -148,6 +148,10 @@ h1 {
 
     }
 
+    .container {
+        margin-top: 270px;
+    }
+
     .search {
         border-radius: 6px;
         padding: 5px;
