@@ -14,7 +14,7 @@ const vueApp = new Vue({
                     this.books = data.books;
                     console.log(this.filteredBooks)
                 });
-        },
+        }, //To show information when the search result equals to none.
         filtered: function () {
             let information = document.querySelector(".info")
             console.log(this.filteredBooks)
