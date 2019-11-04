@@ -54,12 +54,10 @@
         </div>
 
 
-        <div v-show="filteredBooks.length === 0" class="info" v-cloak>
-            <h5>{{filter}}</h5>
-        </div>
+        <!-- <div v-show="filteredBooks.length === 0" class="info" v-cloak> -->
+        <h5 class="info">{{filtered()}} Sorry, there are no books that matched your query</h5>
 
-
-
+        <!-- </div> -->
 
     </div>
 

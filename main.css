@@ -1,10 +1,10 @@
-/* [v-cloak] {
+[v-cloak] {
     display: none;
-} */
-
-[v-cloak]>* {
-    display: none
 }
+
+/* [v-cloak]>* {
+    display: none
+} */
 
 
 .container {
@@ -129,6 +129,7 @@ h1 {
 
 .info {
     text-align: center;
+    display: none;
 }
 
 @media all and (max-width:480px) {

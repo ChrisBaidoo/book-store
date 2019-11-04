@@ -3,7 +3,6 @@ const vueApp = new Vue({
     data: {
         books: [],
         search: "",
-        filter: "Sorry, there are no books that matched your query",
     },
     methods: {
         getData: function () {
@@ -13,11 +12,19 @@ const vueApp = new Vue({
                 })
                 .then((data) => {
                     this.books = data.books;
+                    console.log(this.filteredBooks)
                 });
         },
-        // newfiltered: function () {
-        //     return this.newfilteredBooks = this.filteredBooks
-        // }
+        filtered: function () {
+            let information = document.querySelector(".info")
+            console.log(this.filteredBooks)
+            if (this.filteredBooks.length <= 0) {
+                console.log(this.filteredBooks)
+                information.style.display = "block"
+            } else {
+                information.style.display = "none";
+            }
+        }
 
     },
     //Use the Created function to call the getData function
