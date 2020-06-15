@@ -15,7 +15,10 @@ const vueApp = new Vue({
           console.log(this.filteredBooks);
         })
         .catch((error) => {
-          console.log(error);
+          if (error) {
+            alert(error);
+            document.getElementById("loader").style.display = "none";
+          }
         });
     }, //To show information when the search result equals to none.
     filtered: function () {

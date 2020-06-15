@@ -30,6 +30,10 @@
 
         <div class="container m-t 5">
 
+            <div id="spinner">
+                <img src="./assets/loader.gif" alt="loading..." />
+            </div>
+
             <!-- Loop though the book object -->
             <div class="flip-book book" v-for="book in filteredBooks">
                 <!-- Create the front of the card and attatch the book cover -->
@@ -56,6 +60,7 @@
 
         <!-- <div v-show="filteredBooks.length === 0" class="info" v-cloak> -->
         <h5 class="info">{{filtered()}} Sorry, there are no books that matched your query</h5>
+
 
         <!-- </div> -->
 
